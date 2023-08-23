@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-main__inner">
+    <div class="tabs-animation">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    Branch
+                </div>
+            </div>
+
+            <div class="card-body">
+                <form method="post" asp-controller="Branch" asp-action="Save_State">
+                    <div class="mb-3">
+                        <label class="form-label" for="branchName">Branch Name</label>
+                        <input class="form-control" type="text" placeholder="Branch Name" data-sb-validations="required" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="branchCode">Branch Code</label>
+                        <input class="form-control" type="text" placeholder="Branch Code" data-sb-validations="required" />
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a class="btn btn-danger">Cancle</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

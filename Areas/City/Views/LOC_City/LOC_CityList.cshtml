@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-main__inner">
+    <div class="tabs-animation">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    City List
+                </div>
+                <div class="btn-actions-pane-right">
+                    <a asp-area="City" asp-controller="LOC_City" asp-action="LOC_CityAddEdit" class="btn btn-success m-3"> Add New City </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card no-shadow rm-border bg-transparent widget-chart text-start">
+                        <table class="table">
+                            <thead>
+                            <th>City Name</th>
+                            <th>State Name</th>
+                            <th>Country Name</th>
+                            <th>City Code</th>
+                            <th>Action</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rajkot</td>
+                                    <td>Gujrat</td>
+                                    <td>India</td>
+                                    <td>RAJ</td>
+                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
+                                </tr>
+                                <tr>
+                                    <td>Rajkot</td>
+                                    <td>Gujrat</td>
+                                    <td>India</td>
+                                    <td>RAJ</td>
+                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
+                                </tr>
+                                <tr>
+                                    <td>Rajkot</td>
+                                    <td>Gujrat</td>
+                                    <td>India</td>
+                                    <td>RAJ</td>
+                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

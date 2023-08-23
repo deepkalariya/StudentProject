@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-main__inner">
+    <div class="tabs-animation">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    Branch List
+                </div>
+                <div class="btn-actions-pane-right">
+                    <a asp-area="Branch" asp-controller="Branch" asp-action="BranchAddEdit" class="btn btn-success m-3"> Add New Branch </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card no-shadow rm-border bg-transparent widget-chart text-start">
+                        <table class="table">
+                            <thead>
+                            <th>Branch Name</th>
+                            <th>Branch Code</th>
+                            <th>Action</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MCA</td>
+                                    <td>CS&IT</td>
+                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
+                                </tr>
+                                <tr>
+                                    <td>MCA</td>
+                                    <td>CS&IT</td>
+                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

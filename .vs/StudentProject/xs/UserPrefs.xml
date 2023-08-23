@@ -1,0 +1,53 @@
+﻿<Properties StartupConfiguration="{5DBA8D8A-9C19-400F-9706-47C2F946453D}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.StudentProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Branch/Views/Branch/BranchList.cshtml">
+    <Files>
+      <File FileName="Program.cs" Line="26" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="1222" Column="94" />
+      <File FileName="Areas/State/Controllers/LOC_StateController.cs" Line="11" Column="20" />
+      <File FileName="Areas/State/Views/LOC_State/LOC_StateList.cshtml" Line="15" Column="84" />
+      <File FileName="Areas/State/Views/LOC_State/LOC_StateAddEdit.cshtml" Line="32" Column="123" />
+      <File FileName="Areas/Country/Countrollers/LOC_CountryController.cs" Line="14" Column="6" />
+      <File FileName="Areas/Branch/Controllers/BranchController.cs" Line="12" Column="24" />
+      <File FileName="Areas/Branch/Views/Branch/BranchList.cshtml" Line="14" Column="40" />
+      <File FileName="Areas/Branch/Views/Branch/BranchAddEdit.cshtml" Line="39" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="StudentProject" expanded="True">
+            <Node name="StudentProject">
+              <Node name="Areas" expanded="True">
+                <Node name="Branch">
+                  <Node name="Views">
+                    <Node name="Branch">
+                      <Node name="BranchList.cshtml" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+                <Node name="Country" expanded="True">
+                  <Node name="Countrollers" expanded="True" />
+                </Node>
+                <Node name="State" expanded="True">
+                  <Node name="Controllers" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="LOC_State" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Areas\" />
+    <None Remove="Areas\Country\" />
+    <None Remove="Areas\Country\Views\" />
+    <None Remove="Areas\Country\Countrollers\" />
+    <None Remove="Areas\Country\Models\" />
+    <None Remove="Areas\Country\Data\" />
+    <None Remove="Areas\Country\Views\LOC_Country\" />
+    <None Remove="Areas\State\" />
+    <None Remove="Areas\State\Controllers\" />
+    <None Remove="Areas\State\Data\" />
+    <None Remove="Areas\State\Models\" />
+    <None Remove="Areas\State\Views\" />
+    <None Remove="Areas\State\Views\LOC_State\" />
+    <None Remove="Areas\City\" />
+    <None Remove="Areas\City\Data\" />
+    <None Remove="Areas\City\Views\" />
+    <None Remove="Areas\City\Controllers\" />
+    <None Remove="Areas\City\Models\" />
+    <None Remove="Areas\City\Views\LOC_City\" />
+    <None Remove="Areas\Branch\" />
+    <None Remove="Areas\Branch\Data\" />
+    <None Remove="Areas\Branch\Views\" />
+    <None Remove="Areas\Branch\Controllers\" />
+    <None Remove="Areas\Branch\Models\" />
+    <None Remove="Areas\Branch\Views\Branch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Country\" />
+    <Folder Include="Areas\Country\Views\" />
+    <Folder Include="Areas\Country\Countrollers\" />
+    <Folder Include="Areas\Country\Models\" />
+    <Folder Include="Areas\Country\Data\" />
+    <Folder Include="Areas\Country\Views\LOC_Country\" />
+    <Folder Include="Areas\State\" />
+    <Folder Include="Areas\State\Controllers\" />
+    <Folder Include="Areas\State\Data\" />
+    <Folder Include="Areas\State\Models\" />
+    <Folder Include="Areas\State\Views\" />
+    <Folder Include="Areas\State\Views\LOC_State\" />
+    <Folder Include="Areas\City\" />
+    <Folder Include="Areas\City\Data\" />
+    <Folder Include="Areas\City\Views\" />
+    <Folder Include="Areas\City\Controllers\" />
+    <Folder Include="Areas\City\Models\" />
+    <Folder Include="Areas\City\Views\LOC_City\" />
+    <Folder Include="Areas\Branch\" />
+    <Folder Include="Areas\Branch\Data\" />
+    <Folder Include="Areas\Branch\Views\" />
+    <Folder Include="Areas\Branch\Controllers\" />
+    <Folder Include="Areas\Branch\Models\" />
+    <Folder Include="Areas\Branch\Views\Branch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+</Project>

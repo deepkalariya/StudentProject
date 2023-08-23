@@ -1,0 +1,93 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StudentProject
+build_property.RootNamespace = StudentProject
+build_property.ProjectDir = /Users/deepkalariya/Desktop/StudentProject/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/deepkalariya/Desktop/StudentProject
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Branch/Views/Branch/BranchAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQnJhbmNoL1ZpZXdzL0JyYW5jaC9CcmFuY2hBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Branch/Views/Branch/BranchList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQnJhbmNoL1ZpZXdzL0JyYW5jaC9CcmFuY2hMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Branch/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQnJhbmNoL1ZpZXdzL19WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/City/Views/LOC_City/LOC_CityAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ2l0eS9WaWV3cy9MT0NfQ2l0eS9MT0NfQ2l0eUFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/City/Views/LOC_City/LOC_CityList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ2l0eS9WaWV3cy9MT0NfQ2l0eS9MT0NfQ2l0eUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/City/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ2l0eS9WaWV3cy9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Country/Views/LOC_Country/LOC_CountryAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ291bnRyeS9WaWV3cy9MT0NfQ291bnRyeS9MT0NfQ291bnRyeUFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Country/Views/LOC_Country/LOC_CountryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ291bnRyeS9WaWV3cy9MT0NfQ291bnRyeS9MT0NfQ291bnRyeUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Country/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ291bnRyeS9WaWV3cy9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/State/Views/LOC_State/LOC_StateAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhdGUvVmlld3MvTE9DX1N0YXRlL0xPQ19TdGF0ZUFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/State/Views/LOC_State/LOC_StateList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhdGUvVmlld3MvTE9DX1N0YXRlL0xPQ19TdGF0ZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/State/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhdGUvVmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-3vnjdqbq9g
