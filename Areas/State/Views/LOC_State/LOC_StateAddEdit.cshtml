@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model StudentProject.Areas.State.Models.LOC_StateModel
 
 <div class="app-main__inner">
     <div class="tabs-animation">
@@ -16,20 +17,23 @@
             </div>
 
             <div class="card-body">
-                <form method="post" asp-controller="State" asp-action="Save_State">
+                <form method="post" asp-area="State" asp-controller="LOC_State" asp-action="Save_State">
                     <div class="mb-3">
                         <label class="form-label" for="country">Country</label>
-                        <select class="form-control">
+                        <select class="form-control" asp-for="CountryId">
                             <option value=""></option>
                         </select>
+                        <span asp-validation-for="CountryId" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="stateName">State Name</label>
-                        <input class="form-control" type="text" placeholder="State Name" data-sb-validations="required" />
+                        <input class="form-control" asp-for="StateName" type="text" placeholder="State Name" data-sb-validations="required" />
+                        <span asp-validation-for="StateName" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="stateCode">State Code</label>
-                        <input class="form-control" type="text" placeholder="State Code" data-sb-validations="required" />
+                        <input class="form-control" asp-for="StateCode" type="text" placeholder="State Code" data-sb-validations="required" />
+                        <span asp-validation-for="StateCode" class="text-danger"></span>
                     </div>
                     <div class="row">
                         <div class="col-3">

@@ -39,6 +39,7 @@
                                                         <input type="hidden" name="countryId" value="@dr["CountryID"]" />
                                                         <button type="submit" class="btn btn-danger">Delete</button>
                                                     </form>
+                                                    <a asp-area="Country" asp-controller="LOC_Country" asp-action="editCountry" asp-route-countryId="@dr["CountryID"]">Edit</a>
                                                 </td>
                                             </tr>
                                         }

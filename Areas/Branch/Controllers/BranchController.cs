@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -12,14 +14,41 @@ namespace StudentProject.Areas.Branch.Controllers
     [Route("{controller}/{action}")]
     public class BranchController : Controller
     {
-        // GET: /<controller>/
+        private IConfiguration Configuration;
+
+        public BranchController(IConfiguration _configuration)
+        {
+            Configuration = _configuration;
+        }
         public IActionResult BranchList()
         {
-            return View();
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "PR_Branch_SelectAll";
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                dt.Load(dataReader);
+            }
+            return View(dt);
         }
         public IActionResult BranchAddEdit()
         {
             return View();
+        }
+        public IActionResult BranchDelete(int branchId)
+        {
+            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "PR_Branch_DeletePK";
+            cmd.Parameters.Add("@BranchID",SqlDbType.Int).Value=branchId;
+            cmd.ExecuteNonQuery();
+            return RedirectToAction("BranchList");
         }
     }
 }

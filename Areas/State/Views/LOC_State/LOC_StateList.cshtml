@@ -1,7 +1,8 @@
-﻿@{
+﻿@using System.Data;
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model DataTable
 
 <div class="app-main__inner">
     <div class="tabs-animation">
@@ -23,28 +24,29 @@
                             <thead>
                             <th>Country Name</th>
                             <th>State Name</th>
-                            <th> Code</th>
+                            <th>State Code</th>
                             <th>Action</th>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>India</td>
-                                    <td>Gujrat</td>
-                                    <td>GUJ</td>
-                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
-                                </tr>
-                                <tr>
-                                    <td>India</td>
-                                    <td>Gujrat</td>
-                                    <td>GUJ</td>
-                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
-                                </tr>
-                                <tr>
-                                    <td>India</td>
-                                    <td>Gujrat</td>
-                                    <td>GUJ</td>
-                                    <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
-                                </tr>
+                                @{
+                                    if (Model.Rows.Count > 0)
+                                    {
+                                        foreach (DataRow dr in Model.Rows)
+                                        {
+                                            <tr>
+                                                <td>@dr["CountryName"]</td>
+                                                <td>@dr["StateName"]</td>
+                                                <td>@dr["StateCode"]</td>
+                                                <td>
+                                                    <form asp-area="State" asp-controller="LOC_State" asp-action="StateDelete">
+                                                        <input type="hidden" name="stateId" value="@dr["StateID"]" />
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                }
                             </tbody>
                         </table>
                     </div>

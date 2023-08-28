@@ -1,7 +1,8 @@
-﻿@{
+﻿@using System.Data;
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model DataTable
 <div class="app-main__inner">
     <div class="tabs-animation">
         <div class="mb-3 card">
@@ -25,7 +26,25 @@
                             <th>Action</th>
                             </thead>
                             <tbody>
-                                <tr>
+                                @{
+                                    if (Model.Rows.Count > 0)
+                                    {
+                                        foreach(DataRow dt in Model.Rows)
+                                        {
+                                            <tr>
+                                                <td>@dt["BranchName"]</td>
+                                                <td>@dt["BranchCode"]</td>
+                                                <td>
+                                                    <form asp-area="Branch" asp-controller="Branch" asp-action="BranchDelete">
+                                                        <input type="hidden" name="branchId" value="@dt["BranchID"]" />
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                                @*<tr>
                                     <td>MCA</td>
                                     <td>CS&IT</td>
                                     <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
@@ -34,7 +53,7 @@
                                     <td>MCA</td>
                                     <td>CS&IT</td>
                                     <td><a class="btn btn-danger">DELETE</a> <a class="btn btn-primary">Edit</a> </td>
-                                </tr>
+                                </tr>*@
                             </tbody>
                         </table>
                     </div>
