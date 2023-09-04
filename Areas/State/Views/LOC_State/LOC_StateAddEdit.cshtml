@@ -18,12 +18,13 @@
 
             <div class="card-body">
                 <form method="post" asp-area="State" asp-controller="LOC_State" asp-action="Save_State">
+                    <input type="hidden" asp-for="StateID" />
                     <div class="mb-3">
                         <label class="form-label" for="country">Country</label>
-                        <select class="form-control" asp-for="CountryId">
-                            <option value=""></option>
+                        <select class="form-control form-select" asp-for="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))">
+                            <option disabled selected>Select Country</option>
                         </select>
-                        <span asp-validation-for="CountryId" class="text-danger"></span>
+                        <span asp-validation-for="CountryID" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="stateName">State Name</label>
@@ -48,5 +49,7 @@
 </div>
 
 @section Scripts{
-    <partial name="_ValidationScriptsPartial" />
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
 }

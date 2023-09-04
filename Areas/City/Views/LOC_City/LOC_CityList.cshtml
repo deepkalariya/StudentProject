@@ -43,6 +43,7 @@
                                                     <form asp-area="City" asp-controller="LOC_City" asp-action="CityDelete">
                                                         <input type="hidden" name="cityId" value="@dr["CityID"]" />
                                                         <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <a class="btn btn-primary" asp-area="City" asp-controller="LOC_City" asp-action="editCity" asp-route-cityId="@dr["CityID"]">Edit</a>
                                                     </form>
                                                 </td>
                                             </tr>

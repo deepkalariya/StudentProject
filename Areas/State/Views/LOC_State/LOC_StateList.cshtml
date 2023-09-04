@@ -41,6 +41,7 @@
                                                     <form asp-area="State" asp-controller="LOC_State" asp-action="StateDelete">
                                                         <input type="hidden" name="stateId" value="@dr["StateID"]" />
                                                         <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <a class="btn btn-primary" asp-area="State" asp-controller="LOC_State" asp-action="editState" asp-route-stateId="@dr["StateID"]"> Edit </a>
                                                     </form>
                                                 </td>
                                             </tr>

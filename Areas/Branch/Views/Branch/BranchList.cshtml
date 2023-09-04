@@ -38,6 +38,7 @@
                                                     <form asp-area="Branch" asp-controller="Branch" asp-action="BranchDelete">
                                                         <input type="hidden" name="branchId" value="@dt["BranchID"]" />
                                                         <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <a class="btn btn-primary" asp-area="Branch" asp-controller="Branch" asp-action="editBranch" asp-route-branchId="@dt["BranchID"]">Edit</a>
                                                     </form>
                                                 </td>
                                             </tr>

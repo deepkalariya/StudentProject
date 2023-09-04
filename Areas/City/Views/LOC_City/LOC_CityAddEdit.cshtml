@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model StudentProject.Areas.City.Models.LOC_CityModel
 <div class="app-main__inner">
     <div class="tabs-animation">
         <div class="mb-3 card">
@@ -13,26 +13,31 @@
             </div>
 
             <div class="card-body">
-                <form method="post" asp-controller="City" asp-action="Save_State">
+                <form method="post" asp-area="City" asp-controller="LOC_City" asp-action="Save_City">
+                    <input type="hidden" asp-for="CityID" />
                     <div class="mb-3">
                         <label class="form-label" for="cityName">City Name</label>
-                        <input class="form-control" type="text" placeholder="City Name" data-sb-validations="required" />
+                        <input class="form-control" asp-for="CityName" type="text" placeholder="City Name" data-sb-validations="required" />
+                        <span asp-validation-for="CityName" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="state">State</label>
-                        <select class="form-control">
-                            <option value=""></option>
+                        <select class="form-control form-select" asp-items=@(new SelectList(ViewBag.StateList,"StateID","StateName")) asp-for="StateID">
+                            <option disabled selected>Select State</option>
                         </select>
+                        <span asp-validation-for="StateID" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="country">Country</label>
-                        <select class="form-control">
-                            <option value=""></option>
+                        <select class="form-control form-select" asp-items=@(new SelectList(ViewBag.CountryList,"CountryID","CountryName")) asp-for="CountryID">
+                            <option disabled selected>Select Country</option>
                         </select>
+                        <span asp-validation-for="CountryID" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="cityCode">City Code</label>
-                        <input class="form-control" type="text" placeholder="City Code" data-sb-validations="required" />
+                        <input class="form-control" asp-for="CityCode" type="text" placeholder="City Code" data-sb-validations="required" />
+                        <span asp-validation-for="CityCode" class="text-danger"></span>
                     </div>
                     <div class="row">
                         <div class="col-3">

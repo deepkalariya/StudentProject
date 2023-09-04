@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using StudentProject.Areas.State.Models;
+using static StudentProject.Areas.Country.Models.LOC_CountryModel;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -39,6 +40,7 @@ namespace StudentProject.Areas.State.Controllers
 
         public IActionResult LOC_StateAddEdit()
         {
+            FillCountryDDL();
             return View();
         }
 
@@ -46,8 +48,37 @@ namespace StudentProject.Areas.State.Controllers
         {
             if (ModelState.IsValid)
             {
+                SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                if (statemodel.StateID == null)
+                {
+                    cmd.CommandText = "PR_State_Insert";
+                }
+                else
+                {
+                    cmd.CommandText = "PR_State_Update";
+                    cmd.Parameters.Add("@StateID",SqlDbType.Int).Value=statemodel.StateID;
+                }
+
+                cmd.Parameters.AddWithValue("StateName",statemodel.StateName);
+                cmd.Parameters.AddWithValue("StateCode", statemodel.StateCode);
+                cmd.Parameters.AddWithValue("CountryID", statemodel.CountryID);
+                if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
+                {
+                    if (statemodel.StateID == null)
+                    {
+                        TempData["message"] = "State Inserted Successfully";
+                    }
+                    else
+                    {
+                        TempData["message"] = "State Updated Successfully";
+                    }
+                }
             }
+            FillCountryDDL();
             return View("LOC_StateAddEdit");
         }
 
@@ -61,6 +92,57 @@ namespace StudentProject.Areas.State.Controllers
             cmd.Parameters.Add("@StateId",SqlDbType.Int).Value=stateId;
             cmd.ExecuteNonQuery();
             return RedirectToAction("LOC_StateList");
+        }
+
+        public void FillCountryDDL()
+        {
+            List<CountryDropDownModel> list = new List<CountryDropDownModel>();
+            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "PR_Country_SelectAll";
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    CountryDropDownModel countryDropDown = new CountryDropDownModel()
+                    {
+                        CountryID = Convert.ToInt32(dataReader["CountryID"]),
+                        CountryName = dataReader["CountryName"].ToString()
+                    };
+                    list.Add(countryDropDown);
+                }
+                dataReader.Close();
+            }
+            conn.Close();
+            ViewBag.CountryList = list;
+        }
+            
+        public IActionResult editState(int stateId)
+        {
+            FillCountryDDL();
+            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "PR_State_SelectByPK";
+            cmd.Parameters.Add("@StateId", SqlDbType.Int).Value = stateId;
+            LOC_StateModel stateModel = new LOC_StateModel();
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    stateModel.StateID = Convert.ToInt32(dataReader["StateID"]);
+                    stateModel.StateName = dataReader["StateName"].ToString();
+                    stateModel.StateCode = dataReader["StateCode"].ToString();
+                    stateModel.CountryID = Convert.ToInt32(dataReader["CountryID"]);
+                }
+                return View("LOC_StateAddEdit",stateModel);
+            }
+            return View("LOC_StateAddEdit");
         }
     }
 }

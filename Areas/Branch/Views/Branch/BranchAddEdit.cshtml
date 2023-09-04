@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model StudentProject.Areas.Branch.Models.BranchModel
 
 <div class="app-main__inner">
     <div class="tabs-animation">
@@ -13,14 +14,17 @@
             </div>
 
             <div class="card-body">
-                <form method="post" asp-controller="Branch" asp-action="Save_State">
+                <form method="post" asp-area="Branch" asp-controller="Branch" asp-action="Save_Branch">
+                    <input type="hidden" asp-for="BranchID" />
                     <div class="mb-3">
                         <label class="form-label" for="branchName">Branch Name</label>
-                        <input class="form-control" type="text" placeholder="Branch Name" data-sb-validations="required" />
+                        <input asp-for="BranchName" class="form-control" type="text" placeholder="Branch Name" data-sb-validations="required" />
+                        <span asp-validation-for="BranchName" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="branchCode">Branch Code</label>
-                        <input class="form-control" type="text" placeholder="Branch Code" data-sb-validations="required" />
+                        <input asp-for="BranchCode" class="form-control" type="text" placeholder="Branch Code" data-sb-validations="required" />
+                        <span asp-validation-for="BranchCode" class="text-danger"></span>
                     </div>
                     <div class="row">
                         <div class="col-3">
