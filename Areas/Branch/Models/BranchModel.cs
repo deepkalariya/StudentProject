@@ -21,6 +21,14 @@ namespace StudentProject.Areas.Branch.Models
 
 		[Required]
 		public DateTime Modified { get; set; }
-	}
+
+		public class BranchDropDownModel
+		{
+            public int? BranchID { get; set; }
+
+            public string BranchName { get; set; }
+        }
+
+    }
 }
 

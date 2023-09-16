@@ -38,8 +38,32 @@ namespace StudentProject.Areas.State.Controllers
             return View(dt);
         }
 
-        public IActionResult LOC_StateAddEdit()
+        public IActionResult LOC_StateAddEdit(int? stateId)
         {
+            if (stateId != null)
+            {
+                FillCountryDDL();
+                SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "PR_State_SelectByPK";
+                cmd.Parameters.Add("@StateId", SqlDbType.Int).Value = stateId;
+                LOC_StateModel stateModel = new LOC_StateModel();
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        stateModel.StateID = Convert.ToInt32(dataReader["StateID"]);
+                        stateModel.StateName = dataReader["StateName"].ToString();
+                        stateModel.StateCode = dataReader["StateCode"].ToString();
+                        stateModel.CountryID = Convert.ToInt32(dataReader["CountryID"]);
+                    }
+                    return View("LOC_StateAddEdit", stateModel);
+                }
+                return View("LOC_StateAddEdit");
+            }
             FillCountryDDL();
             return View();
         }
@@ -118,31 +142,6 @@ namespace StudentProject.Areas.State.Controllers
             }
             conn.Close();
             ViewBag.CountryList = list;
-        }
-            
-        public IActionResult editState(int stateId)
-        {
-            FillCountryDDL();
-            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "PR_State_SelectByPK";
-            cmd.Parameters.Add("@StateId", SqlDbType.Int).Value = stateId;
-            LOC_StateModel stateModel = new LOC_StateModel();
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            if (dataReader.HasRows)
-            {
-                while (dataReader.Read())
-                {
-                    stateModel.StateID = Convert.ToInt32(dataReader["StateID"]);
-                    stateModel.StateName = dataReader["StateName"].ToString();
-                    stateModel.StateCode = dataReader["StateCode"].ToString();
-                    stateModel.CountryID = Convert.ToInt32(dataReader["CountryID"]);
-                }
-                return View("LOC_StateAddEdit",stateModel);
-            }
-            return View("LOC_StateAddEdit");
         }
     }
 }

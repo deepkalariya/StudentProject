@@ -1,43 +1,39 @@
 ﻿<Properties StartupConfiguration="{5DBA8D8A-9C19-400F-9706-47C2F946453D}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.StudentProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Branch/Controllers/BranchController.cs">
+  <MonoDevelop.Ide.ItemProperties.StudentProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Student/Views/Student/StudentList.cshtml">
     <Files>
-      <File FileName="Areas/State/Controllers/LOC_StateController.cs" Line="78" Column="22" />
-      <File FileName="Areas/State/Models/LOC_StateModel.cs" Line="21" Column="1" />
-      <File FileName="Areas/State/Views/LOC_State/LOC_StateAddEdit.cshtml" Line="12" Column="31" />
-      <File FileName="Areas/State/Views/LOC_State/LOC_StateList.cshtml" Line="44" Column="126" />
-      <File FileName="Areas/Branch/Views/Branch/BranchList.cshtml" Line="42" Column="60" />
-      <File FileName="Areas/Branch/Views/Branch/BranchAddEdit.cshtml" Line="18" Column="59" />
-      <File FileName="Areas/Branch/Controllers/BranchController.cs" Line="64" Column="1" />
-      <File FileName="Areas/Branch/Models/BranchModel.cs" Line="13" Column="30" />
+      <File FileName="Areas/State/Controllers/LOC_StateController.cs" />
+      <File FileName="Areas/State/Models/LOC_StateModel.cs" />
+      <File FileName="Areas/State/Views/LOC_State/LOC_StateAddEdit.cshtml" />
+      <File FileName="Areas/State/Views/LOC_State/LOC_StateList.cshtml" />
+      <File FileName="Areas/Student/Views/Student/StudentList.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/Student/Controllers/StudentController.cs" Line="55" Column="10" />
+      <File FileName="Areas/Student/Views/Student/StudentAddEdit.cshtml" Line="24" Column="27" />
+      <File FileName="Areas/Student/Models/StudentModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StudentProject">
-            <Node name="StudentProject">
+            <Node name="StudentProject" expanded="True">
               <Node name="Areas" expanded="True">
-                <Node name="Branch">
-                  <Node name="Controllers">
-                    <Node name="BranchController.cs" selected="True" />
-                  </Node>
-                </Node>
                 <Node name="State" expanded="True">
                   <Node name="Controllers" expanded="True" />
-                  <Node name="Models" expanded="True" />
+                </Node>
+                <Node name="Student" expanded="True">
+                  <Node name="Controllers" expanded="True" />
                   <Node name="Views" expanded="True">
-                    <Node name="LOC_State" expanded="True" />
+                    <Node name="Student" expanded="True">
+                      <Node name="StudentList.cshtml" selected="True" />
+                    </Node>
                   </Node>
                 </Node>
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

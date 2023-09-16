@@ -1,0 +1,70 @@
+﻿@using System.Data;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model DataTable
+
+<div class="app-main__inner">
+    <div class="tabs-animation">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    State List
+                </div>
+                <div class="btn-actions-pane-right">
+                    <a asp-area="Student" asp-controller="Student" asp-action="StudentAddEdit" class="btn btn-success m-3"> Add New Student </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <table class="table">
+                            <thead>
+                            <th>Student Name</th>
+                            <th>Student Mobile No.</th>
+                            <th>Email</th>
+                            <th>Father Mobile No.</th>
+                            <th>Address</th>
+                            <th>BirthDate</th>
+                            <th>Age</th>
+                            <th>IsActive</th>
+                            <th>Gender</th>
+                            <th>Password</th>
+                            <th>Action</th>
+                            </thead>
+                            <tbody>
+                                @{
+                                    if (Model.Rows.Count > 0) {
+                                        foreach (DataRow dr in Model.Rows) {
+                                            <tr>
+                                                <td>@dr["StudentName"]</td>
+                                                <td>@dr["MobileNoStudent"]</td>
+                                                <td>@dr["Email"]</td>
+                                                <td>@dr["MobileNoFather"]</td>
+                                                <td>@dr["Address"]</td>
+                                                <td>@dr["BirthDate"]</td>
+                                                <td>@dr["Age"]</td>
+                                                <td>@dr["IsActive"]</td>
+                                                <td>@dr["Gender"]</td>
+                                                <td>@dr["Password"]</td>
+                                                <td>
+                                                    <form asp-area="Student" asp-controller="Student" asp-action="StudentDelete">
+                                                        <input type="hidden" name="studentId" value="@dr["StudentID"]" />
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <a class="btn btn-primary" asp-area="Student" asp-controller="Student" asp-action="StudentAddEdit" asp-route-studentId="@dr["StudentID"]">Edit</a>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

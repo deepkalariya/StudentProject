@@ -24,6 +24,13 @@ namespace StudentProject.Areas.City.Models
 
         [Required]
         public DateTime Modified { get; set; }
+
+        public class CityDropDownModel
+        {
+            public int? CityID { get; set; }
+
+            public string? CityName { get; set; }
+        }
     }
 }
 

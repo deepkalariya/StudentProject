@@ -64,6 +64,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhdGUvVmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Student/Views/Student/StudentAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3R1ZGVudC9WaWV3cy9TdHVkZW50L1N0dWRlbnRBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Student/Views/Student/StudentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3R1ZGVudC9WaWV3cy9TdHVkZW50L1N0dWRlbnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepkalariya/Desktop/StudentProject/Areas/Student/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3R1ZGVudC9WaWV3cy9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/deepkalariya/Desktop/StudentProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

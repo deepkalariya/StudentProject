@@ -32,6 +32,12 @@
     <None Remove="Areas\Branch\Controllers\" />
     <None Remove="Areas\Branch\Models\" />
     <None Remove="Areas\Branch\Views\Branch\" />
+    <None Remove="Areas\Student\" />
+    <None Remove="Areas\Student\Views\" />
+    <None Remove="Areas\Student\Data\" />
+    <None Remove="Areas\Student\Models\" />
+    <None Remove="Areas\Student\Controllers\" />
+    <None Remove="Areas\Student\Views\Student\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
@@ -59,6 +65,12 @@
     <Folder Include="Areas\Branch\Controllers\" />
     <Folder Include="Areas\Branch\Models\" />
     <Folder Include="Areas\Branch\Views\Branch\" />
+    <Folder Include="Areas\Student\" />
+    <Folder Include="Areas\Student\Views\" />
+    <Folder Include="Areas\Student\Data\" />
+    <Folder Include="Areas\Student\Models\" />
+    <Folder Include="Areas\Student\Controllers\" />
+    <Folder Include="Areas\Student\Views\Student\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
