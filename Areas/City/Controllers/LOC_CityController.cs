@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using static StudentProject.Areas.State.Models.LOC_StateModel;
 using static StudentProject.Areas.Country.Models.LOC_CountryModel;
 using StudentProject.Areas.City.Models;
+using StudentProject.DAL;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,17 +27,10 @@ namespace StudentProject.Areas.City.Controllers
         
         public IActionResult LOC_CityList()
         {
+            string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
-            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "PR_City_SelectAll";
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            if (dataReader.HasRows)
-            {
-                dt.Load(dataReader);
-            }
+            LOC_CITY_DAL loccitydal = new LOC_CITY_DAL();
+            dt = loccitydal.getAllCity(conn,"PR_City_SelectAll");
             return View(dt);
         }
 

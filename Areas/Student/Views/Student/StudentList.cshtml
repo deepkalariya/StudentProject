@@ -31,7 +31,6 @@
                             <th>Age</th>
                             <th>IsActive</th>
                             <th>Gender</th>
-                            <th>Password</th>
                             <th>Action</th>
                             </thead>
                             <tbody>
@@ -48,7 +47,6 @@
                                                 <td>@dr["Age"]</td>
                                                 <td>@dr["IsActive"]</td>
                                                 <td>@dr["Gender"]</td>
-                                                <td>@dr["Password"]</td>
                                                 <td>
                                                     <form asp-area="Student" asp-controller="Student" asp-action="StudentDelete">
                                                         <input type="hidden" name="studentId" value="@dr["StudentID"]" />

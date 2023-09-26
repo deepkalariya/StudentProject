@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using StudentProject.Areas.Student.Models;
+using StudentProject.DAL;
 using static StudentProject.Areas.Branch.Models.BranchModel;
 using static StudentProject.Areas.City.Models.LOC_CityModel;
 
@@ -21,17 +22,11 @@ namespace StudentProject.Areas.Student.Controllers
 
         public IActionResult StudentList()
         {
+            string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
-            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "PR_Student_SelectAll";
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            if (dataReader.HasRows)
-            {
-                dt.Load(dataReader);
-            }
+            STUDENT_DAL studentdal = new STUDENT_DAL();
+            dt = studentdal.getAllStudent(conn, "PR_Student_SelectAll");
+            
             return View(dt);
         }
 

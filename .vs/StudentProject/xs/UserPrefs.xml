@@ -1,44 +1,51 @@
 ﻿<Properties StartupConfiguration="{5DBA8D8A-9C19-400F-9706-47C2F946453D}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.StudentProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Student/Views/Student/StudentList.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Country/Countrollers/LOC_CountryController.cs">
     <Files>
-      <File FileName="Areas/State/Controllers/LOC_StateController.cs" />
-      <File FileName="Areas/State/Models/LOC_StateModel.cs" />
-      <File FileName="Areas/State/Views/LOC_State/LOC_StateAddEdit.cshtml" />
-      <File FileName="Areas/State/Views/LOC_State/LOC_StateList.cshtml" />
-      <File FileName="Areas/Student/Views/Student/StudentList.cshtml" Line="1" Column="1" />
-      <File FileName="Areas/Student/Controllers/StudentController.cs" Line="55" Column="10" />
-      <File FileName="Areas/Student/Views/Student/StudentAddEdit.cshtml" Line="24" Column="27" />
-      <File FileName="Areas/Student/Models/StudentModel.cs" />
+      <File FileName="DAL/LOC_COUNTRY_DAL.cs" Line="6" Column="3" IsPinned="True" />
+      <File FileName="Areas/Country/Countrollers/LOC_CountryController.cs" Line="40" Column="14" />
+      <File FileName="Areas/Student/Controllers/StudentController.cs" Line="146" Column="36" />
+      <File FileName="DAL/LOC_COUNTRY_DALBASE.cs" Line="28" Column="92" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StudentProject">
-            <Node name="StudentProject" expanded="True">
+            <Node name="StudentProject">
               <Node name="Areas" expanded="True">
+                <Node name="Country" expanded="True">
+                  <Node name="Countrollers" expanded="True">
+                    <Node name="LOC_CountryController.cs" selected="True" />
+                  </Node>
+                  <Node name="Views" expanded="True">
+                    <Node name="LOC_Country" expanded="True" />
+                  </Node>
+                </Node>
                 <Node name="State" expanded="True">
                   <Node name="Controllers" expanded="True" />
+                  <Node name="Models" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="LOC_State" expanded="True" />
+                  </Node>
                 </Node>
                 <Node name="Student" expanded="True">
                   <Node name="Controllers" expanded="True" />
                   <Node name="Views" expanded="True">
-                    <Node name="Student" expanded="True">
-                      <Node name="StudentList.cshtml" selected="True" />
-                    </Node>
+                    <Node name="Student" expanded="True" />
                   </Node>
                 </Node>
               </Node>
+              <Node name="DAL" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.StudentProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

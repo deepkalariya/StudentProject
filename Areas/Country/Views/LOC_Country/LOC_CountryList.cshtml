@@ -1,10 +1,42 @@
 ﻿@using System.Data;
+@using StudentProject.Areas.Country.Models
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model DataTable
+
 <div class="app-main__inner">
     <div class="tabs-animation">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    Country Filter
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-area="Country" asp-controller="LOC_Country" asp-action="LOC_CountryList">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label" for="country">Country</label>
+                            <input class="form-control" name="countryName" type="text" placeholder="Country Name" data-sb-validations="required" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="countrycode">Country Code</label>
+                            <input class="form-control" name="countryCode" type="text" placeholder="Country Code" data-sb-validations="required" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-success">Apply</button>
+                            <button class="btn btn-danger">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="mb-3 card">
             <div class="card-header-tab card-header">
                 <div class="card-header-title font-size-lg text-capitalize fw-normal">

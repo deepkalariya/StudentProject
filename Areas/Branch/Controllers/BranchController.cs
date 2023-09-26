@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using StudentProject.Areas.Branch.Models;
+using StudentProject.DAL;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,17 +24,11 @@ namespace StudentProject.Areas.Branch.Controllers
         }
         public IActionResult BranchList()
         {
+            string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
-            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "PR_Branch_SelectAll";
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            if (dataReader.HasRows)
-            {
-                dt.Load(dataReader);
-            }
+            BRANCH_DAL branchdal = new BRANCH_DAL();
+            dt = branchdal.getAllBranch(conn, "PR_Branch_SelectAll");
+            
             return View(dt);
         }
         public IActionResult BranchAddEdit()

@@ -38,6 +38,7 @@
     <None Remove="Areas\Student\Models\" />
     <None Remove="Areas\Student\Controllers\" />
     <None Remove="Areas\Student\Views\Student\" />
+    <None Remove="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
@@ -71,8 +72,11 @@
     <Folder Include="Areas\Student\Models\" />
     <Folder Include="Areas\Student\Controllers\" />
     <Folder Include="Areas\Student\Views\Student\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.2008" Version="4.1.0" />
+    <PackageReference Include="EnterpriseLibrary.Data.NetCore" Version="6.3.2" />
   </ItemGroup>
 </Project>

@@ -12,4 +12,8 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/deepkalariya/.nuget/packages/" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgEnterpriseLibrary_Common_NetCore Condition=" '$(PkgEnterpriseLibrary_Common_NetCore)' == '' ">/Users/deepkalariya/.nuget/packages/enterpriselibrary.common.netcore/6.3.0</PkgEnterpriseLibrary_Common_NetCore>
+    <PkgEnterpriseLibrary_Data_NetCore Condition=" '$(PkgEnterpriseLibrary_Data_NetCore)' == '' ">/Users/deepkalariya/.nuget/packages/enterpriselibrary.data.netcore/6.3.2</PkgEnterpriseLibrary_Data_NetCore>
+  </PropertyGroup>
 </Project>

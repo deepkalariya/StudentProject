@@ -9,6 +9,36 @@
             <div class="card-header-tab card-header">
                 <div class="card-header-title font-size-lg text-capitalize fw-normal">
                     <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    Branch Filter
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-area="Branch" asp-controller="Branch" asp-action="BranchList">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label" for="branchname">Branch Name</label>
+                            <input class="form-control" name="branchname" type="text" placeholder="Branch Name" data-sb-validations="required" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="branchcode">Branch Code</label>
+                            <input class="form-control" name="branchcode" type="text" placeholder="Branch Code" data-sb-validations="required" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-success">Apply</button>
+                            <button class="btn btn-danger">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
                     Branch List
                 </div>
                 <div class="btn-actions-pane-right">
@@ -29,7 +59,7 @@
                                 @{
                                     if (Model.Rows.Count > 0)
                                     {
-                                        foreach(DataRow dt in Model.Rows)
+                                        foreach (DataRow dt in Model.Rows)
                                         {
                                             <tr>
                                                 <td>@dt["BranchName"]</td>

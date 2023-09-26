@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using StudentProject.Areas.Country.Models;
+using StudentProject.DAL;
+using static StudentProject.Areas.Country.Models.LOC_CountryModel;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,18 +24,18 @@ namespace StudentProject.Areas.Country.Countrollers
             Configuration = _configuration;
         }
 
-        public IActionResult LOC_CountryList()
+        public IActionResult LOC_CountryList(LOC_CountryModel? countryModel)
         {
+            string conn = this.Configuration.GetConnectionString("conn");
+            LOC_COUNTRY_DAL locCountryDal = new LOC_COUNTRY_DAL();
             DataTable dt = new DataTable();
-            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "PR_Country_SelectAll";
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            if (dataReader.HasRows)
+            if (countryModel.CountryName == null && countryModel.CountryCode == null)
             {
-                dt.Load(dataReader);
+                dt = locCountryDal.getAllCountry(conn, "PR_Country_SelectAll");
+            }
+            else
+            {
+                dt = locCountryDal.getFillteredData(conn, "PR_Country_Apply_Filter",countryModel.CountryName,countryModel.CountryCode);
             }
             return View(dt);
         }
@@ -111,6 +113,32 @@ namespace StudentProject.Areas.Country.Countrollers
                 return View("LOC_CountryAddEdit",countryModel);
             }
             return View("LOC_CountryAddEdit");
+        }
+
+        public void FillCountryDDL()
+        {
+            List<CountryDropDownModel> list = new List<CountryDropDownModel>();
+            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "PR_Country_SelectAll";
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    CountryDropDownModel countryDropDown = new CountryDropDownModel()
+                    {
+                        CountryID = Convert.ToInt32(dataReader["CountryID"]),
+                        CountryName = dataReader["CountryName"].ToString()
+                    };
+                    list.Add(countryDropDown);
+                }
+                dataReader.Close();
+            }
+            conn.Close();
+            ViewBag.CountryList = list;
         }
     }
 }

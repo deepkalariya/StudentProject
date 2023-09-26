@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using StudentProject.Areas.State.Models;
 using static StudentProject.Areas.Country.Models.LOC_CountryModel;
+using StudentProject.DAL;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,19 +23,16 @@ namespace StudentProject.Areas.State.Controllers
         {
             Configuration = _configuration;
         }
-        public IActionResult LOC_StateList()
+        public IActionResult LOC_StateList(LOC_StateModel? stateModel)
         {
+            string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
-            SqlConnection conn = new SqlConnection(this.Configuration.GetConnectionString("conn"));
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "PR_State_SelectAll";
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            if (dataReader.HasRows)
+            LOC_STATE_DAL locStateDal = new LOC_STATE_DAL();
+            if (stateModel.StateName == null && stateModel.StateCode == null)
             {
-                dt.Load(dataReader);
+                dt = locStateDal.getAllState(conn, "PR_State_SelectAll");
             }
+
             return View(dt);
         }
 

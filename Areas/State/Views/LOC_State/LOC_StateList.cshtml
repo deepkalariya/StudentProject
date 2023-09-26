@@ -10,6 +10,41 @@
             <div class="card-header-tab card-header">
                 <div class="card-header-title font-size-lg text-capitalize fw-normal">
                     <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    State Filter
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-area="State" asp-controller="LOC_State" asp-action="LOC_StateList">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-label" for="countryname">Country Name</label>
+                            <input class="form-control" name="countryname" type="text" placeholder="Country Name" data-sb-validations="required" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="statename">State Name</label>
+                            <input class="form-control" name="statename" type="text" placeholder="State Name" data-sb-validations="required" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="statecode">State Code</label>
+                            <input class="form-control" name="statecode" type="text" placeholder="State Code" data-sb-validations="required" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-success">Apply</button>
+                            <button class="btn btn-danger">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
                     State List
                 </div>
                 <div class="btn-actions-pane-right">
