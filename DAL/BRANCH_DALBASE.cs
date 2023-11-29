@@ -18,6 +18,20 @@ namespace StudentProject.DAL
             }
             return dt;
         }
+
+        public DataTable getFillteredData(string conn, string procedurename, string? branchName, string? branchCode)
+        {
+            DataTable dt = new DataTable();
+            SqlDatabase database = new SqlDatabase(conn);
+            DbCommand command = database.GetStoredProcCommand(procedurename);
+            database.AddInParameter(command, "BranchName", SqlDbType.VarChar, branchName);
+            database.AddInParameter(command, "BranchCode", SqlDbType.VarChar, branchCode);
+            using (IDataReader reader = database.ExecuteReader(command))
+            {
+                dt.Load(reader);
+            }
+            return dt;
+        }
     }
 }
 

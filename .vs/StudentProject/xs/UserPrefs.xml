@@ -1,10 +1,19 @@
 ﻿<Properties StartupConfiguration="{5DBA8D8A-9C19-400F-9706-47C2F946453D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Country/Countrollers/LOC_CountryController.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Country/Models/LOC_CountryModel.cs">
     <Files>
-      <File FileName="DAL/LOC_COUNTRY_DAL.cs" Line="6" Column="3" IsPinned="True" />
-      <File FileName="Areas/Country/Countrollers/LOC_CountryController.cs" Line="40" Column="14" />
-      <File FileName="Areas/Student/Controllers/StudentController.cs" Line="146" Column="36" />
-      <File FileName="DAL/LOC_COUNTRY_DALBASE.cs" Line="28" Column="92" />
+      <File FileName="Areas/Country/Countrollers/LOC_CountryController.cs" Line="82" Column="10" />
+      <File FileName="Areas/Country/Views/LOC_Country/LOC_CountryAddEdit.cshtml" Line="44" Column="18" />
+      <File FileName="Areas/City/Controllers/LOC_CityController.cs" Line="99" Column="37" />
+      <File FileName="Areas/City/Views/LOC_City/LOC_CityAddEdit.cshtml" Line="54" Column="30" />
+      <File FileName="Areas/City/Views/LOC_City/LOC_CityList.cshtml" Line="51" Column="15" />
+      <File FileName="Areas/Country/Views/LOC_Country/LOC_CountryList.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/Branch/Views/Branch/BranchAddEdit.cshtml" Line="35" Column="24" />
+      <File FileName="Areas/Branch/Controllers/BranchController.cs" Line="73" Column="29" />
+      <File FileName="Areas/Student/Views/Student/StudentAddEdit.cshtml" Line="94" Column="18" />
+      <File FileName="Areas/Student/Controllers/StudentController.cs" Line="132" Column="29" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="1123" Column="37" />
+      <File FileName="Areas/Country/Models/LOC_CountryModel.cs" Line="7" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,8 +22,9 @@
             <Node name="StudentProject">
               <Node name="Areas" expanded="True">
                 <Node name="Country" expanded="True">
-                  <Node name="Countrollers" expanded="True">
-                    <Node name="LOC_CountryController.cs" selected="True" />
+                  <Node name="Countrollers" expanded="True" />
+                  <Node name="Models">
+                    <Node name="LOC_CountryModel.cs" selected="True" />
                   </Node>
                   <Node name="Views" expanded="True">
                     <Node name="LOC_Country" expanded="True" />
@@ -28,13 +38,16 @@
                   </Node>
                 </Node>
                 <Node name="Student" expanded="True">
-                  <Node name="Controllers" expanded="True" />
+                  <Node name="Models" expanded="True" />
                   <Node name="Views" expanded="True">
                     <Node name="Student" expanded="True" />
                   </Node>
                 </Node>
               </Node>
               <Node name="DAL" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -42,10 +55,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.StudentProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

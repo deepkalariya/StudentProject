@@ -14,7 +14,7 @@
 
             <div class="card-body">
                 <form method="post" asp-area="Country" asp-controller="LOC_Country" asp-action="Save_Country">
-                    <input type="hidden" asp-for="CountryID"/>
+                    <input type="hidden" asp-for="CountryID" />
                     <div class="mb-3">
                         <label class="form-label" for="countryName">Country Name</label>
                         <input class="form-control" asp-for="CountryName" type="text" placeholder="Country Name" data-sb-validations="required" />
@@ -32,6 +32,16 @@
                         </div>
                     </div>
                 </form>
+                @{
+                    if (ViewData["message"] != "")
+                    {
+                        <div class="mt-3">
+                            <span class="bg-success text-white bg-light-success fw-bold h3">
+                                @ViewData["message"]
+                            </span>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>

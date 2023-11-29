@@ -1,8 +1,9 @@
 ﻿@using System.Data;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    DataTable dt = ViewData["Table"] as DataTable;
 }
-@model DataTable
+@model StudentProject.Areas.State.Models.LOC_StateModel
 
 <div class="app-main__inner">
     <div class="tabs-animation">
@@ -17,18 +18,19 @@
                 <form asp-area="State" asp-controller="LOC_State" asp-action="LOC_StateList">
                     <div class="row">
                         <div class="col-md-4">
-                            <label class="form-label" for="countryname">Country Name</label>
-                            <input class="form-control" name="countryname" type="text" placeholder="Country Name" data-sb-validations="required" />
+                            <label class="form-label" for="country">Country</label>
+                            <select class="form-control form-select" asp-for="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))">
+                                <option value="0" selected>Select Country</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="stateName">State Name</label>
+                            <input class="form-control" asp-for="StateName" type="text" placeholder="State Name" data-sb-validations="required" />
                             <span class="text-danger"></span>
                         </div>
                         <div class="col-md-4">
-                            <label class="form-label" for="statename">State Name</label>
-                            <input class="form-control" name="statename" type="text" placeholder="State Name" data-sb-validations="required" />
-                            <span class="text-danger"></span>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="form-label" for="statecode">State Code</label>
-                            <input class="form-control" name="statecode" type="text" placeholder="State Code" data-sb-validations="required" />
+                            <label class="form-label" for="stateCode">State Code</label>
+                            <input class="form-control" asp-for="StateCode" type="text" placeholder="State Code" data-sb-validations="required" />
                             <span class="text-danger"></span>
                         </div>
                     </div>
@@ -64,9 +66,9 @@
                             </thead>
                             <tbody>
                                 @{
-                                    if (Model.Rows.Count > 0)
+                                    if (dt.Rows.Count > 0)
                                     {
-                                        foreach (DataRow dr in Model.Rows)
+                                        foreach (DataRow dr in dt.Rows)
                                         {
                                             <tr>
                                                 <td>@dr["CountryName"]</td>

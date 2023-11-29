@@ -70,11 +70,11 @@ namespace StudentProject.Areas.Country.Countrollers
                 {
                     if (countryModel.CountryID==null)
                     {
-                        TempData["message"] = "Country Inserted Successfully";
+                        ViewData["message"] = "Country Inserted Successfully";
                     }
                     else
                     {
-                        TempData["message"] = "Country Updated Successfully";
+                        ViewData["message"] = "Country Updated Successfully";
                     }
                 }
             }

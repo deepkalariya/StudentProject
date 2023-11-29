@@ -25,13 +25,23 @@ namespace StudentProject.Areas.City.Controllers
             Configuration = _configuration;
         }
         
-        public IActionResult LOC_CityList()
+        public IActionResult LOC_CityList(LOC_CityModel cityModel)
         {
+            FillCountryDDL();
+            FillStateDDL();
             string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
             LOC_CITY_DAL loccitydal = new LOC_CITY_DAL();
-            dt = loccitydal.getAllCity(conn,"PR_City_SelectAll");
-            return View(dt);
+            if (cityModel.CountryID == 0 && cityModel.StateID == 0 && cityModel.CityName == null && cityModel.CityCode == null)
+            {
+                dt = loccitydal.getAllCity(conn, "PR_City_SelectAll");
+            }
+            else
+            {
+                dt = loccitydal.getFillteredData(conn, "PR_City_Apply_Filter", cityModel);
+            }
+            ViewData["table"] = dt;
+            return View();
         }
 
         public IActionResult LOC_CityAddEdit()
@@ -82,11 +92,11 @@ namespace StudentProject.Areas.City.Controllers
                     {
                         if (citymodel.CityID == null)
                         {
-                            TempData["message"] = "City Inserted Successfully";
+                            ViewData["message"] = "City Inserted Successfully";
                         }
                         else
                         {
-                            TempData["message"] = "City Updated Successfully";
+                            ViewData["message"] = "City Updated Successfully";
                         }
                     }
                 }
@@ -176,4 +186,3 @@ namespace StudentProject.Areas.City.Controllers
         }
     }
 }
-

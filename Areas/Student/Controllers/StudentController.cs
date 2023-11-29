@@ -20,12 +20,21 @@ namespace StudentProject.Areas.Student.Controllers
             Configuration = _configuration;
 		}
 
-        public IActionResult StudentList()
+        public IActionResult StudentList(StudentModel studentModel)
         {
+            FillBranchDDL();
+            FillCityDDL();
             string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
             STUDENT_DAL studentdal = new STUDENT_DAL();
-            dt = studentdal.getAllStudent(conn, "PR_Student_SelectAll");
+            if (studentModel.CityID == 0 && studentModel.BranchID == 0 && studentModel.StudentName == null)
+            {
+                dt = studentdal.getAllStudent(conn, "PR_Student_SelectAll");
+            }
+            else
+            {
+                dt = studentdal.getFillteredData(conn, "PR_Student_Apply_Filter",studentModel);
+            }
             
             return View(dt);
         }
@@ -116,11 +125,11 @@ namespace StudentProject.Areas.Student.Controllers
                 {
                     if (studentModel.StudentID == null)
                     {
-                        TempData["message"] = "Student Insertd Successfully";
+                        ViewData["message"] = "Student Insertd Successfully";
                     }
                     else
                     {
-                        TempData["message"] = "Student Updated Successfully";
+                        ViewData["message"] = "Student Updated Successfully";
                     }
                 }
             }

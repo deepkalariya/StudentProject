@@ -10,7 +10,43 @@
             <div class="card-header-tab card-header">
                 <div class="card-header-title font-size-lg text-capitalize fw-normal">
                     <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
-                    State List
+                    Student Filter
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-area="Student" asp-controller="Student" asp-action="StudentList">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-label" for="cityName">City Name</label>
+                            <select class="form-control form-select" asp-items=@(new SelectList(ViewBag.CityList,"CityID","CityName")) id="CityID" name="CityID">
+                                <option disabled selected>Select State</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="branch">Branch</label>
+                            <select class="form-control form-select" asp-items=@(new SelectList(ViewBag.BranchList,"BranchID","BranchName")) id="BranchID" name="BranchID">
+                                <option disabled selected>Select State</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="cityname">Student Name</label>
+                            <input class="form-control" name="studentName" type="text" placeholder="Student Name" data-sb-validations="required" />
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-success">Apply</button>
+                            <button class="btn btn-danger">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                    Student List
                 </div>
                 <div class="btn-actions-pane-right">
                     <a asp-area="Student" asp-controller="Student" asp-action="StudentAddEdit" class="btn btn-success m-3"> Add New Student </a>
@@ -35,8 +71,10 @@
                             </thead>
                             <tbody>
                                 @{
-                                    if (Model.Rows.Count > 0) {
-                                        foreach (DataRow dr in Model.Rows) {
+                                    if (Model.Rows.Count > 0)
+                                    {
+                                        foreach (DataRow dr in Model.Rows)
+                                        {
                                             <tr>
                                                 <td>@dr["StudentName"]</td>
                                                 <td>@dr["MobileNoStudent"]</td>

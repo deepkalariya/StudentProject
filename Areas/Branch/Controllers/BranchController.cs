@@ -22,13 +22,19 @@ namespace StudentProject.Areas.Branch.Controllers
         {
             Configuration = _configuration;
         }
-        public IActionResult BranchList()
+        public IActionResult BranchList(BranchModel branchModel)
         {
             string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
             BRANCH_DAL branchdal = new BRANCH_DAL();
-            dt = branchdal.getAllBranch(conn, "PR_Branch_SelectAll");
-            
+            if (branchModel.BranchName == null && branchModel.BranchCode == null)
+            {
+                dt = branchdal.getAllBranch(conn, "PR_Branch_SelectAll");
+            }
+            else
+            {
+                dt = branchdal.getFillteredData(conn, "PR_Branch_Apply_Filter", branchModel.BranchName, branchModel.BranchCode);
+            }
             return View(dt);
         }
         public IActionResult BranchAddEdit()
@@ -60,11 +66,11 @@ namespace StudentProject.Areas.Branch.Controllers
                 {
                     if (branchModel.BranchID == null)
                     {
-                        TempData["message"] = "Branch Inserted Successfully";
+                        ViewData["message"] = "Branch Inserted Successfully";
                     }
                     else
                     {
-                        TempData["message"] = "Branch Updated Successfully";
+                        ViewData["message"] = "Branch Updated Successfully";
                     }
                 }
             }

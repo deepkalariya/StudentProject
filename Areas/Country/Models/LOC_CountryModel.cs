@@ -4,6 +4,7 @@ namespace StudentProject.Areas.Country.Models
 {
 	public class LOC_CountryModel
 	{
+		[Required(ErrorMessage = "Country is Required")]
 		public int? CountryID { get; set; }
 
 		[Required(ErrorMessage = "Country Name is Required")]

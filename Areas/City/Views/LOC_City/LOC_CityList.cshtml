@@ -1,6 +1,7 @@
 ﻿@using System.Data;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    DataTable dt = ViewData["Table"] as DataTable;
 }
 @model DataTable
 
@@ -18,13 +19,15 @@
                     <div class="row">
                         <div class="col-md-3">
                             <label class="form-label" for="country">Country Name</label>
-                            <input class="form-control" name="countryName" type="text" placeholder="Country Name" data-sb-validations="required" />
-                            <span class="text-danger"></span>
+                            <select class="form-control form-select" asp-items=@(new SelectList(ViewBag.CountryList,"CountryID","CountryName")) id="CountryID" name="CountryID">
+                                <option disabled selected>Select Country</option>
+                            </select>
                         </div>
                         <div class="col-md-3">
                             <label class="form-label" for="statename">State Name</label>
-                            <input class="form-control" name="statename" type="text" placeholder="State Name" data-sb-validations="required" />
-                            <span class="text-danger"></span>
+                            <select class="form-control form-select" asp-items=@(new SelectList(ViewBag.StateList,"StateID","StateName")) id="StateID" name="StateID">
+                                <option disabled selected>Select State</option>
+                            </select>
                         </div>
                         <div class="col-md-3">
                             <label class="form-label" for="cityname">City Name</label>
@@ -70,9 +73,9 @@
                             </thead>
                             <tbody>
                                 @{
-                                    if (Model.Rows.Count > 0)
+                                    if (dt.Rows.Count > 0)
                                     {
-                                        foreach (DataRow dr in Model.Rows)
+                                        foreach (DataRow dr in dt.Rows)
                                         {
                                             <tr>
                                                 <td>@dr["CityName"]</td>

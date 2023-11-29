@@ -23,17 +23,23 @@ namespace StudentProject.Areas.State.Controllers
         {
             Configuration = _configuration;
         }
-        public IActionResult LOC_StateList(LOC_StateModel? stateModel)
+        public IActionResult LOC_StateList(LOC_StateModel stateModel)
         {
+            FillCountryDDL();
             string conn = this.Configuration.GetConnectionString("conn");
             DataTable dt = new DataTable();
             LOC_STATE_DAL locStateDal = new LOC_STATE_DAL();
-            if (stateModel.StateName == null && stateModel.StateCode == null)
+            if (stateModel.StateName == null && stateModel.StateCode == null && stateModel.CountryID == 0)
             {
                 dt = locStateDal.getAllState(conn, "PR_State_SelectAll");
+                
             }
-
-            return View(dt);
+            else
+            {
+                dt = locStateDal.getFillteredData(conn, "PR_State_Apply_Filtter",stateModel);
+            }
+            ViewData["Table"] = dt;
+            return View("LOC_StateList");
         }
 
         public IActionResult LOC_StateAddEdit(int? stateId)

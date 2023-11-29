@@ -70,8 +70,8 @@
                                                     <form asp-area="Country" asp-controller="LOC_Country" asp-action="CountryDetete">
                                                         <input type="hidden" name="countryId" value="@dr["CountryID"]" />
                                                         <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <a asp-area="Country" class="btn btn-primary" asp-controller="LOC_Country" asp-action="editCountry" asp-route-countryId="@dr["CountryID"]">Edit</a>
                                                     </form>
-                                                    <a asp-area="Country" asp-controller="LOC_Country" asp-action="editCountry" asp-route-countryId="@dr["CountryID"]">Edit</a>
                                                 </td>
                                             </tr>
                                         }
